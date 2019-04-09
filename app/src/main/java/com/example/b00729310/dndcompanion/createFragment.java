@@ -1,17 +1,13 @@
 package com.example.b00729310.dndcompanion;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -53,35 +49,7 @@ public class createFragment extends Fragment  {
         //Declare Next Button
         Button btnNxt = (Button) rootView.findViewById(R.id.btnNext);
 
-        //OnClickListener change Root View to Stats XML Layout
-        btnNxt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                mListener.changeFragment(2);
-
-            }
-        });
         return rootView;
-    }//End OnCreate
-
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-
     }
 
     //Add data to the spinner from the Character Race and Class StringArrays
@@ -90,15 +58,13 @@ public class createFragment extends Fragment  {
         super.onActivityCreated(savedInstanceState);
 
         //Set Contents of Drop Down Menu
-        adapterRace = ArrayAdapter.createFromResource(getActivity(), R.array.characterRaces, android.R.layout.simple_spinner_dropdown_item);
+        adapterRace = ArrayAdapter.createFromResource(getContext(), R.array.characterRaces, android.R.layout.simple_spinner_dropdown_item);
         adapterRace.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRace.setAdapter(adapterRace);
 
-        adapterClass = ArrayAdapter.createFromResource(getActivity(), R.array.characterClasses, android.R.layout.simple_spinner_dropdown_item);
+        adapterClass = ArrayAdapter.createFromResource(getContext(), R.array.characterClasses, android.R.layout.simple_spinner_dropdown_item);
         adapterClass.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerClass.setAdapter(adapterClass);
-
-
     }
 
 }//End Fragment
