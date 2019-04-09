@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -55,8 +57,9 @@ public class MainActivity extends AppCompatActivity
         });
         //Display Home Fragment on Launch
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, homeFragment.newInstance());
+        transaction.replace(R.id.frame_container, new homeFragment());
         transaction.commit();
+
 
 
 

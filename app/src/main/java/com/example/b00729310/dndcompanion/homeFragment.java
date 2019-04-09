@@ -13,13 +13,6 @@ import android.view.ViewGroup;
 
 public class homeFragment extends Fragment
 {
-    public static homeFragment newInstance()
-    {
-        homeFragment fragment = new homeFragment();
-        return fragment;
-
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {

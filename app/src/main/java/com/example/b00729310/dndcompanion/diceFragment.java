@@ -13,12 +13,7 @@ import android.view.ViewGroup;
 
 public class diceFragment extends Fragment
 {
-    public static diceFragment newInstance()
-    {
-        diceFragment fragment = new diceFragment();
-        return fragment;
 
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState)

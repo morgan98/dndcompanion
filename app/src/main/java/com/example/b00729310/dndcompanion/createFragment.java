@@ -7,17 +7,24 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 public class createFragment extends Fragment {
 
-    public static createFragment newInstance()
-    {
-        createFragment fragment= new createFragment();
-        return fragment;
+    //Root View
+    private View rootView;
 
-    }
+    //spinners
+    Spinner spinnerRace;
+    Spinner spinnerClass;
+
+    //Array Adapters
+    ArrayAdapter<CharSequence> adapterRace;
+    ArrayAdapter<CharSequence> adapterClass;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -29,6 +36,19 @@ public class createFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        return  inflater.inflate(R.layout.fragment_create, container, false);
+
+        //Set Rootview as current layout file
+        rootView = inflater.inflate(R.layout.character_creator, container, false);
+
+        //Spinner Classes onCreate
+        spinnerRace = (Spinner)rootView.findViewById(R.id.spinnerRace);
+
+        return rootView;
+
     }
+
+
+    //Create an Array Adapter From the Character StringArray
+
+
 }

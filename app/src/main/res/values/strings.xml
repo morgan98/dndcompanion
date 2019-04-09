@@ -11,6 +11,36 @@
     <string name="title_load">Load</string>
     <string name="title_session">Session</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    //Character Creator Form Strings
+    <string name="character_name">Character Name</string>
+    <string name="pronouns">Pronouns e.g. She/Her</string>
+    <string name="character_basics">Character Basics</string>
+    <string name="race">Race</string>
+    <string name="character_class">Class</string>
+
+
+    //String Array for Character Races
+    <string-array name="characterRaces">
+        <item>Human</item>
+        <item>Elf</item>
+        <item>Gnome</item>
+        <item>Orc</item>
+        <item>Dwarf</item>
+    </string-array>
+
+    //String Array for Character Classes
+    <string-array name="characterClasses">
+        <item>Barbarian</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Monk</item>
+        <item>Ranger</item>
+        <item>Wizard</item>
+        <item>Fighter</item>
+        <item>Sorcerer</item>
+    </string-array>
+
+
 </resources>

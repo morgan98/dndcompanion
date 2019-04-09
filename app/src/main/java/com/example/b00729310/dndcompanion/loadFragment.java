@@ -12,12 +12,6 @@ import android.view.ViewGroup;
 
 public class loadFragment extends Fragment
 {
-    public static loadFragment newInstance()
-    {
-        loadFragment fragment= new loadFragment();
-        return fragment;
-
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState)

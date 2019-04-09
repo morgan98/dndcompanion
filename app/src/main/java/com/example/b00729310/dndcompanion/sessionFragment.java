@@ -11,12 +11,7 @@ import android.view.ViewGroup;
 
 
 public class sessionFragment extends Fragment {
-    public static sessionFragment newInstance()
-    {
-       sessionFragment fragment= new sessionFragment();
-        return fragment;
 
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -28,6 +23,6 @@ public class sessionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        return  inflater.inflate(R.layout.fragment_load, container, false);
+        return  inflater.inflate(R.layout.fragment_session, container, false);
     }
 }
