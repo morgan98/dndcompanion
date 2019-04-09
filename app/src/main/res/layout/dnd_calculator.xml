@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/calcDisplayCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_margin="16dp"
+        app:contentPadding="4dp"
+        app:contentPaddingLeft="6dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/calcDisplay"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:text="@string/calculator_display_placeholder"/>
+    </androidx.cardview.widget.CardView>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:columnCount="3"
+        android:useDefaultMargins="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcDisplayCardView">
+
+        <Button
+            android:id="@+id/d2Button"
+            android:text="D2"
+            style="@style/calculatorButton"/>
+
+        <Button
+            android:id="@+id/d4Button"
+            android:text="D4"
+            style="@style/calculatorButton" />
+
+        <Button
+            android:id="@+id/d6Button"
+            android:text="D6"
+            style="@style/calculatorButton" />
+
+        <Button
+            android:id="@+id/d8Button"
+            android:text="D8"
+            style="@style/calculatorButton" />
+
+        <Button
+            android:id="@+id/d12Button"
+            android:text="D12"
+            style="@style/calculatorButton" />
+
+        <Button
+            android:id="@+id/d20Button"
+            android:text="D20"
+            style="@style/calculatorButton" />
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
