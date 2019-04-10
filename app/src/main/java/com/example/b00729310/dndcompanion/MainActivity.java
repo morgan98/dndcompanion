@@ -82,14 +82,15 @@ public class MainActivity extends AppCompatActivity
    //Methods for adding amd removing strength
     public void addStr(View view)
     {
-        if(remCount != 0 && strCount < 16) {
+
+        if(remCount > 0 && strCount < 16) {
             strCount = strCount + 1;
             updateStr(strCount);
 
             remCount = remCount - 1;
             updateRem(remCount);
         }
-        else if(strCount >= 16)
+        else if(strCount >= 16 && remCount != 0)
         {
             strCount = strCount + 2;
             updateStr(strCount);
@@ -97,24 +98,56 @@ public class MainActivity extends AppCompatActivity
             remCount = remCount - 2;
             updateRem(remCount);
 
-            Toast statadvice = Toast.makeText(this,R.string.advice1, Toast.LENGTH_LONG);
-            statadvice.show();
         }
-        else
+        else if(remCount == 0)
         {
+
+            strCount = strCount ;
+            remCount = remCount -1 ;
+
             Toast error1 = Toast.makeText(this,R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
             error1.show();
+
+        }
+
+        if(strCount ==16)
+        {
+            Toast statadvice = Toast.makeText(this,R.string.advice1, Toast.LENGTH_LONG);
+            statadvice.show();
         }
 
     }
 
     public void minusStr(View view)
     {
+        if (strCount != 8 && strCount < 16)
+        {
+            strCount = strCount - 1;
+            updateStr(strCount);
 
-        strCount = strCount - 1;
-        updateStr(strCount);
+            remCount = remCount - 1;
+            updateRem(remCount);
+        }
+        else if(strCount == 8)
+        {
+            strCount = strCount;
+            updateStr(strCount);
 
+            strCount = strCount ;
+            remCount = remCount ;
+
+            Toast advice2 = Toast.makeText(this,R.string.lowestvalue, Toast.LENGTH_LONG);
+            advice2.show();
+
+        }
     }
+
+
+
+
+
+    //Methods for Updating Text Views
+
     private void updateStr(int num)
     {
         //Update the Strength Value
