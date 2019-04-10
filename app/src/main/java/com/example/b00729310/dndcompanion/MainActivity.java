@@ -71,6 +71,10 @@ public class MainActivity extends AppCompatActivity
         transaction.replace(R.id.frame_container, new createFragment());
         transaction.commit();
 
+
+        //Generate Calls to Toast Messages
+
+
         }//end OnCreate
 
     //CREATE A CHARACTER CODE
@@ -78,26 +82,56 @@ public class MainActivity extends AppCompatActivity
    //Methods for adding amd removing strength
     public void addStr(View view)
     {
+        if(remCount != 0 && strCount < 16) {
             strCount = strCount + 1;
-            update(strCount);
+            updateStr(strCount);
+
+            remCount = remCount - 1;
+            updateRem(remCount);
+        }
+        else if(strCount >= 16)
+        {
+            strCount = strCount + 2;
+            updateStr(strCount);
+
+            remCount = remCount - 2;
+            updateRem(remCount);
+
+            Toast statadvice = Toast.makeText(this,R.string.advice1, Toast.LENGTH_LONG);
+            statadvice.show();
+        }
+        else
+        {
+            Toast error1 = Toast.makeText(this,R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
+            error1.show();
+        }
 
     }
-
 
     public void minusStr(View view)
     {
 
         strCount = strCount - 1;
-        update(strCount);
+        updateStr(strCount);
 
     }
-
-
-    private void update(int num)
+    private void updateStr(int num)
     {
         //Update the Strength Value
         TextView updateStr = (TextView) findViewById(R.id.strValue);
         updateStr.setText(""+ num);
+    }
+
+
+
+
+
+    //Method for adding removing points to the unusedpoints Textview
+    private void updateRem(int num)
+    {
+        TextView update = (TextView) findViewById(R.id.unusedPoints);
+        update.setText(""+num);
+
     }
 
 

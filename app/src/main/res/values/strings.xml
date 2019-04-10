@@ -60,6 +60,7 @@
     //Toast Messages
     <string name="toastErrorNoPoints">You have no more points left to spend!</string>
     <string name="lowestvalue">Your Stat can\'t have a value lower than 8!</string>
+    <string name="advice1">It now Costs two Points to upgrade this Stat!</string>
 
 
 </resources>
