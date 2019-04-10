@@ -15,12 +15,10 @@ import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class createFragment extends Fragment  {
-
-    private OnFragmentInteractionListener mListener;
-
 
     //Root View
     private View rootView;
@@ -50,7 +48,7 @@ public class createFragment extends Fragment  {
         spinnerRace = (Spinner) rootView.findViewById(R.id.spinnerRace);
         spinnerClass = (Spinner) rootView.findViewById(R.id.spinnerClass);
 
-        //Declare Next Button
+        //Declare Buttons
         Button btnNxt = (Button) rootView.findViewById(R.id.btnNext);
 
 
@@ -76,5 +74,7 @@ public class createFragment extends Fragment  {
 
 
     }
+
+
 
 }//End Fragment

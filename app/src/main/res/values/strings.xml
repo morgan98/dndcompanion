@@ -10,6 +10,10 @@
     <string name="title_load">Load</string>
     <string name="title_session">Session</string>
 
+    //Default Stat Values
+    <string name="basestat">8</string>
+    <string name="pointLeft">27</string>
+
     //Layout Titles
     <string name="character_basics">Character</string>
 
@@ -51,6 +55,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="stats">Stats</string>
+
+
+    //Toast Messages
+    <string name="toastErrorNoPoints">You have no more points left to spend!</string>
+    <string name="lowestvalue">Your Stat can\'t have a value lower than 8!</string>
 
 
 </resources>
