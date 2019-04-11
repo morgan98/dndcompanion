@@ -225,18 +225,12 @@
         android:id="@+id/characterName"
         android:layout_width="129dp"
         android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/character_name"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cctitle1" />
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="35dp" />
 
     <EditText
         android:id="@+id/pronouns"
@@ -295,15 +289,16 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnSave"
         android:layout_width="62dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="onSaveButtonClick"
         android:layout_marginBottom="8dp"
-        android:text="Save"
+        android:text="@string/save_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
