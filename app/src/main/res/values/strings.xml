@@ -4,20 +4,25 @@
     <string name="app_name">dndcompanion</string>
 
     //Bottom Navigation Strings
-    <string name="title_home">Home</string>
+    <string name="title_home">Character</string>
     <string name="title_dice">Dice</string>
     <string name="title_create">Create</string>
     <string name="title_load">Load</string>
     <string name="title_session">Session</string>
 
+    //Placeholder Text for Character Sheet
+    <string name="charNameHere">"Name Here"</string>
+    <string name="pronounsHere">"Pronouns Here"</string>
+
+
     //Default Stat Values
     <string name="basestat">8</string>
     <string name="pointLeft">27</string>
 
-    //Layout Titles
+    //Layout Titles for Character/Create Character Views
     <string name="character_basics">Character</string>
 
-    //Character Creator Form Strings
+    //Character Sheet/Character Creator label Strings
     <string name="character_name">Character Name</string>
     <string name="pronouns">Pronouns e.g. She/Her</string>
     <string name="race">Race</string>
@@ -62,6 +67,8 @@
     <string name="lowestvalue">Your Stat can\'t have a value lower than 8!</string>
     <string name="advice1">It now Costs two Points to upgrade this Stat!</string>
     <string name="save_button">Save</string>
+    <string name="character_created">Character Created!</string>
+    <String name="charact_loaded">Character Loaded!</String>
 
 
 </resources>
