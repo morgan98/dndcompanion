@@ -69,6 +69,7 @@
     <string name="save_button">Save</string>
     <string name="character_created">Character Created!</string>
     <String name="charact_loaded">Character Loaded!</String>
+    <string name="points_remaining_label">Points Remaining:</string>
 
 
 </resources>

@@ -57,6 +57,8 @@ public class CreateFragment extends Fragment  {
 
         TextView characterNameTextView = rootView.findViewById(R.id.characterName);
         TextView pronounsTextView = rootView.findViewById(R.id.pronouns);
+        TextView titleTextView = rootView.findViewById(R.id.cctitle1);
+
         Spinner raceSpinner = rootView.findViewById(R.id.spinnerRace);
         Spinner classSpinner = rootView.findViewById(R.id.spinnerClass);
 
@@ -82,6 +84,15 @@ public class CreateFragment extends Fragment  {
 
             Log.d("MAINACTIVITY", "This button works");
             System.out.println(gson.toJson(character));
+        });
+
+        characterNameTextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    titleTextView.setText(characterNameTextView.getText());
+                }
+            }
         });
 
 
@@ -135,13 +146,19 @@ public class CreateFragment extends Fragment  {
 
             updateRem(remCount);
 
-            Toast error1 = Toast.makeText(getContext(), R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
+            Toast error1 = Toast.makeText(
+                    getContext(),
+                    R.string.toastErrorNoPoints,
+                    Toast.LENGTH_LONG);
             error1.show();
 
         }
 
         if (strCount == 16) {
-            Toast statadvice = Toast.makeText(getContext(), R.string.advice1, Toast.LENGTH_LONG);
+            Toast statadvice = Toast.makeText(
+                    getContext(),
+                    R.string.advice1,
+                    Toast.LENGTH_LONG);
             statadvice.show();
         }
 
@@ -159,7 +176,10 @@ public class CreateFragment extends Fragment  {
 
             updateRem(remCount);
 
-            Toast advice2 = Toast.makeText(getContext(), R.string.lowestvalue, Toast.LENGTH_LONG);
+            Toast advice2 = Toast.makeText(
+                    getContext(),
+                    R.string.lowestvalue,
+                    Toast.LENGTH_LONG);
             advice2.show();
 
         } else if (strCount > 16) {
@@ -188,13 +208,19 @@ public class CreateFragment extends Fragment  {
             updateDex(dexCount);
             updateRem(remCount);
 
-            Toast error1 = Toast.makeText(getContext(), R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
+            Toast error1 = Toast.makeText(
+                    getContext(),
+                    R.string.toastErrorNoPoints,
+                    Toast.LENGTH_LONG);
             error1.show();
 
         }
 
         if (dexCount == 16) {
-            Toast statadvice = Toast.makeText(getContext(), R.string.advice1, Toast.LENGTH_LONG);
+            Toast statadvice = Toast.makeText(
+                    getContext(),
+                    R.string.advice1,
+                    Toast.LENGTH_LONG);
             statadvice.show();
         }
 
@@ -211,7 +237,10 @@ public class CreateFragment extends Fragment  {
             updateDex(dexCount);
             updateRem(remCount);
 
-            Toast advice2 = Toast.makeText(getContext(), R.string.lowestvalue, Toast.LENGTH_LONG);
+            Toast advice2 = Toast.makeText(
+                    getContext(),
+                    R.string.lowestvalue,
+                    Toast.LENGTH_LONG);
             advice2.show();
         } else if (strCount > 16) {
             dexCount -= 2;
@@ -242,13 +271,19 @@ public class CreateFragment extends Fragment  {
             remCount -= 1;
             updateRem(remCount);
 
-            Toast error1 = Toast.makeText(getContext(), R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
+            Toast error1 = Toast.makeText(
+                    getContext(),
+                    R.string.toastErrorNoPoints,
+                    Toast.LENGTH_LONG);
             error1.show();
 
         }
 
         if (conCount == 16) {
-            Toast statadvice = Toast.makeText(getContext(), R.string.advice1, Toast.LENGTH_LONG);
+            Toast statadvice = Toast.makeText(
+                    getContext(),
+                    R.string.advice1,
+                    Toast.LENGTH_LONG);
             statadvice.show();
         }
 
@@ -267,7 +302,10 @@ public class CreateFragment extends Fragment  {
             updateRem(conCount);
             updateRem(remCount);
 
-            Toast advice2 = Toast.makeText(getContext(), R.string.lowestvalue, Toast.LENGTH_LONG);
+            Toast advice2 = Toast.makeText(
+                    getContext(),
+                    R.string.lowestvalue,
+                    Toast.LENGTH_LONG);
             advice2.show();
 
         } else if (conCount > 16) {
@@ -298,12 +336,18 @@ public class CreateFragment extends Fragment  {
             remCount -= 1;
             updateRem(remCount);
 
-            Toast error1 = Toast.makeText(getContext(), R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
+            Toast error1 = Toast.makeText(
+                    getContext(),
+                    R.string.toastErrorNoPoints,
+                    Toast.LENGTH_LONG);
             error1.show();
         }
 
         if (intCount == 16) {
-            Toast statadvice = Toast.makeText(getContext(), R.string.advice1, Toast.LENGTH_LONG);
+            Toast statadvice = Toast.makeText(
+                    getContext(),
+                    R.string.advice1,
+                    Toast.LENGTH_LONG);
             statadvice.show();
         }
 
@@ -322,7 +366,10 @@ public class CreateFragment extends Fragment  {
             updateInt(intCount);
             updateRem(remCount);
 
-            Toast advice2 = Toast.makeText(getContext(), R.string.lowestvalue, Toast.LENGTH_LONG);
+            Toast advice2 = Toast.makeText(
+                    getContext(),
+                    R.string.lowestvalue,
+                    Toast.LENGTH_LONG);
             advice2.show();
 
         } else if (intCount > 16) {
@@ -354,13 +401,19 @@ public class CreateFragment extends Fragment  {
             remCount -= 1;
             updateRem(remCount);
 
-            Toast error1 = Toast.makeText(getContext(), R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
+            Toast error1 = Toast.makeText(
+                    getContext(),
+                    R.string.toastErrorNoPoints,
+                    Toast.LENGTH_LONG);
             error1.show();
 
         }
 
         if (wisCount == 16) {
-            Toast statadvice = Toast.makeText(getContext(), R.string.advice1, Toast.LENGTH_LONG);
+            Toast statadvice = Toast.makeText(
+                    getContext(),
+                    R.string.advice1,
+                    Toast.LENGTH_LONG);
             statadvice.show();
         }
 
@@ -376,7 +429,10 @@ public class CreateFragment extends Fragment  {
         } else if (wisCount == 8) {
             updateWis(wisCount);
 
-            Toast advice2 = Toast.makeText(getContext(), R.string.lowestvalue, Toast.LENGTH_LONG);
+            Toast advice2 = Toast.makeText(
+                    getContext(),
+                    R.string.lowestvalue,
+                    Toast.LENGTH_LONG);
             advice2.show();
 
         } else if (wisCount > 16) {
@@ -408,12 +464,18 @@ public class CreateFragment extends Fragment  {
             remCount -= 1;
             updateRem(remCount);
 
-            Toast error1 = Toast.makeText(getContext(), R.string.toastErrorNoPoints, Toast.LENGTH_LONG);
+            Toast error1 = Toast.makeText(
+                    getContext(),
+                    R.string.toastErrorNoPoints,
+                    Toast.LENGTH_LONG);
             error1.show();
         }
 
         if (chaCount == 16) {
-            Toast statadvice = Toast.makeText(getContext(), R.string.advice1, Toast.LENGTH_LONG);
+            Toast statadvice = Toast.makeText(
+                    getContext(),
+                    R.string.advice1,
+                    Toast.LENGTH_LONG);
             statadvice.show();
         }
 
@@ -432,7 +494,10 @@ public class CreateFragment extends Fragment  {
 
             updateRem(remCount);
 
-            Toast advice2 = Toast.makeText(getContext(), R.string.lowestvalue, Toast.LENGTH_LONG);
+            Toast advice2 = Toast.makeText(
+                    getContext(),
+                    R.string.lowestvalue,
+                    Toast.LENGTH_LONG);
             advice2.show();
 
         } else if (chaCount > 16) {
@@ -443,45 +508,37 @@ public class CreateFragment extends Fragment  {
         }
     }
 
-    //Methods for Updating Text Views
+    // Methods for Updating Text Views
     private void updateStr(int num) {
-        //Update the Strength Value
         TextView updateStr = (TextView) rootView.findViewById(R.id.strValue);
         updateStr.setText("" + num);
     }
 
     private void updateDex(int num) {
-        //Update the Strength Value
         TextView updateDex = (TextView) rootView.findViewById(R.id.dexValue);
         updateDex.setText("" + num);
     }
 
     private void updateCon(int num) {
-        //Update the Strength Value
         TextView updateCon = (TextView) rootView.findViewById(R.id.conValue);
         updateCon.setText("" + num);
     }
 
     private void updateInt(int num) {
-        //Update the Strength Value
         TextView updateInt = (TextView) rootView.findViewById(R.id.intValue);
         updateInt.setText("" + num);
     }
 
     private void updateWis(int num) {
-        //Update the Strength Value
         TextView updateWis = (TextView) rootView.findViewById(R.id.wisValue);
         updateWis.setText("" + num);
     }
 
     private void updateCha(int num) {
-        //Update the Strength Value
         TextView updateCha = (TextView) rootView.findViewById(R.id.charValue);
         updateCha.setText("" + num);
     }
 
-
-    // Method for adding removing points to the unused points Textview
     private void updateRem(int num) {
         TextView update = (TextView) rootView.findViewById(R.id.unusedPoints);
         update.setText("" + num);
