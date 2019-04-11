@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class stats extends Fragment
+public class StatsFragment extends Fragment
 {
 
     private OnFragmentInteractionListener mListener;

@@ -5,19 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,22 +23,22 @@ public class MainActivity extends AppCompatActivity {
                 Fragment selectedFragment = null;
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_home:
-                        selectedFragment = new homeFragment();
+                        selectedFragment = new HomeFragment();
                         break;
                     case R.id.navigation_dice:
-                        selectedFragment = new diceFragment();
+                        selectedFragment = new DiceFragment();
                         break;
                     case R.id.navigation_create:
-                        selectedFragment = new createFragment();
+                        selectedFragment = new CreateFragment();
                         break;
                     case R.id.navigation_load:
-                        selectedFragment = new loadFragment();
+                        selectedFragment = new LoadFragment();
                         break;
                     case R.id.navigation_session:
-                        selectedFragment = new sessionFragment();
+                        selectedFragment = new SessionFragment();
                         break;
                     default:
-                        selectedFragment = new homeFragment();
+                        selectedFragment = new HomeFragment();
                 }
 
 
@@ -63,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //Display Home Fragment on Launch
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, new createFragment());
+        transaction.replace(R.id.frame_container, new CreateFragment());
         transaction.commit();
 
 

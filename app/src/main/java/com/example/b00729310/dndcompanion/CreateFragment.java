@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-public class createFragment extends Fragment  {
+public class CreateFragment extends Fragment  {
     private View rootView;
 
     private int strCount = 8;
