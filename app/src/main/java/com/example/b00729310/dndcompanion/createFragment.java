@@ -481,11 +481,10 @@ public class createFragment extends Fragment  {
     }
 
 
-    //Method for adding removing points to the unusedpoints Textview
+    // Method for adding removing points to the unused points Textview
     private void updateRem(int num) {
         TextView update = (TextView) rootView.findViewById(R.id.unusedPoints);
         update.setText("" + num);
-
     }
 
 } // End Fragment
