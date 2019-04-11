@@ -31,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:text="@string/basestat" />
 
         <Button
@@ -57,6 +58,7 @@
 
         <TextView
             android:id="@+id/dexValue"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -86,6 +88,7 @@
 
         <TextView
             android:id="@+id/wisValue"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -124,11 +127,11 @@
             android:id="@+id/lblConsituiton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/constitution"
-            android:textSize="10sp" />
+            android:text="@string/constitution" />
 
         <TextView
             android:id="@+id/conValue"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -155,11 +158,11 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/intelligence"
-            android:textSize="10sp" />
+            android:text="@string/intelligence" />
 
         <TextView
             android:id="@+id/intValue"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -190,6 +193,7 @@
 
         <TextView
             android:id="@+id/charValue"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
