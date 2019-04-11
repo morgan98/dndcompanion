@@ -13,15 +13,11 @@ import android.widget.Spinner;
 
 
 public class createFragment extends Fragment  {
-
-    //Root View
     private View rootView;
 
-    //spinners
     Spinner spinnerRace;
     Spinner spinnerClass;
 
-    //Array Adapters
     ArrayAdapter<CharSequence> adapterRace;
     ArrayAdapter<CharSequence> adapterClass;
 
@@ -29,11 +25,11 @@ public class createFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater,
+                             final ViewGroup container, Bundle savedInstanceState) {
 
         //Set Rootview as character_creator layout file
         rootView = inflater.inflate(R.layout.character_creator, container, false);
@@ -47,7 +43,7 @@ public class createFragment extends Fragment  {
 
 
         return rootView;
-    }//End OnCreate
+    } // End OnCreate
 
 
 
@@ -58,15 +54,21 @@ public class createFragment extends Fragment  {
         super.onActivityCreated(savedInstanceState);
 
         //Set Contents of Drop Down Menu
-        adapterRace = ArrayAdapter.createFromResource(getContext(), R.array.characterRaces, android.R.layout.simple_spinner_dropdown_item);
+        adapterRace = ArrayAdapter.createFromResource(
+                getContext(),
+                R.array.characterRaces,
+                android.R.layout.simple_spinner_dropdown_item);
         adapterRace.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRace.setAdapter(adapterRace);
 
-        adapterClass = ArrayAdapter.createFromResource(getContext(), R.array.characterClasses, android.R.layout.simple_spinner_dropdown_item);
+        adapterClass = ArrayAdapter.createFromResource(
+                getContext(),
+                R.array.characterClasses,
+                android.R.layout.simple_spinner_dropdown_item);
         adapterClass.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerClass.setAdapter(adapterClass);
     }
 
 
 
-}//End Fragment
+} // End Fragment
