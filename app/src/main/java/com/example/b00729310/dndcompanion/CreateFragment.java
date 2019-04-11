@@ -1,6 +1,7 @@
 package com.example.b00729310.dndcompanion;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,8 +19,14 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-public class CreateFragment extends Fragment  {
+
+public class CreateFragment extends Fragment {
+
+    public static final String TAG = CreateFragment.class.getSimpleName();
+
     private View rootView;
 
     private int strCount = 8;
@@ -62,11 +69,14 @@ public class CreateFragment extends Fragment  {
         Spinner raceSpinner = rootView.findViewById(R.id.spinnerRace);
         Spinner classSpinner = rootView.findViewById(R.id.spinnerClass);
 
+        SetAddMinusOnClickListeners();
+
         //Declare Buttons
         Button saveButton = (Button) rootView.findViewById(R.id.btnSave);
 
         saveButton.setOnClickListener(v -> {
             GsonBuilder gsonBuilder = new GsonBuilder();
+            gsonBuilder.setPrettyPrinting();
             Gson gson = gsonBuilder.create();
 
             Character character = new Character(
@@ -82,8 +92,18 @@ public class CreateFragment extends Fragment  {
                     chaCount
             );
 
-            Log.d("MAINACTIVITY", "This button works");
-            System.out.println(gson.toJson(character));
+            String filename = "characters.json";
+            String filecontents = gson.toJson(character);
+            Log.d(TAG, gson.toJson(character));
+            FileOutputStream outputStream;
+
+            try {
+                outputStream = getContext().openFileOutput(filename, Context.MODE_PRIVATE);
+                outputStream.write(filecontents.getBytes());
+                outputStream.close();
+            } catch (IOException e) {
+                Log.e(TAG, e.getMessage());
+            }
         });
 
         characterNameTextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -99,7 +119,43 @@ public class CreateFragment extends Fragment  {
         return rootView;
     } // End OnCreate
 
+    private void SetAddMinusOnClickListeners() {
+        Button addStrength = rootView.findViewById(R.id.strPlus);
+        addStrength.setOnClickListener(v -> addStr());
 
+        Button minusStrength = rootView.findViewById(R.id.strMinus);
+        minusStrength.setOnClickListener(v -> minusStr());
+
+        Button addDexterity = rootView.findViewById(R.id.dexPlus);
+        addDexterity.setOnClickListener(v -> addDex());
+
+        Button minusDexterity = rootView.findViewById(R.id.dexMinus);
+        minusDexterity.setOnClickListener(v -> minusDex());
+
+        Button addWisdom = rootView.findViewById(R.id.wisPlus);
+        addWisdom.setOnClickListener(v -> addWis());
+
+        Button minusWisdom = rootView.findViewById(R.id.wisMinus);
+        minusWisdom.setOnClickListener(v -> minusWis());
+
+        Button addConstitution = rootView.findViewById(R.id.conPlus);
+        addConstitution.setOnClickListener(v -> addCon());
+
+        Button removeConstitution = rootView.findViewById(R.id.conMinus);
+        removeConstitution.setOnClickListener(v -> minusCon());
+
+        Button addIntelligence = rootView.findViewById(R.id.intPlus);
+        addIntelligence.setOnClickListener(v -> addInt());
+
+        Button removeIntelligence = rootView.findViewById(R.id.intMinus);
+        removeIntelligence.setOnClickListener(v -> minusInt());
+
+        Button addCharisma = rootView.findViewById(R.id.chaPlus);
+        addCharisma.setOnClickListener(v -> addCha());
+
+        Button removeCharisma = rootView.findViewById(R.id.chaMinus);
+        removeCharisma.setOnClickListener(v -> minusCha());
+    }
 
 
     //Add data to the spinner from the Character Race and Class StringArrays
@@ -125,9 +181,8 @@ public class CreateFragment extends Fragment  {
 
     //CREATE A CHARACTER CODE
 
-    //Methods for adding amd removing strength
-    public void addStr(View view) {
-
+    //Methods for adding and removing strength
+    public void addStr() {
         if (remCount > 0 && strCount < 16) {
             strCount += 1;
             updateStr(strCount);
@@ -164,7 +219,7 @@ public class CreateFragment extends Fragment  {
 
     }
 
-    public void minusStr(View view) {
+    public void minusStr() {
         if (strCount > 8 && strCount < 16) {
             strCount -= 1;
             updateStr(strCount);
@@ -189,7 +244,7 @@ public class CreateFragment extends Fragment  {
     }
 
     //Methods for adding amd removing Dex
-    public void addDex(View view) {
+    public void addDex() {
 
         if (remCount > 0 && dexCount < 16) {
             dexCount += 1;
@@ -226,7 +281,7 @@ public class CreateFragment extends Fragment  {
 
     }
 
-    public void minusDex(View view) {
+    public void minusDex() {
         if (dexCount != 8 && dexCount < 16) {
             dexCount -= 1;
             updateDex(dexCount);
@@ -251,7 +306,7 @@ public class CreateFragment extends Fragment  {
     }
 
     //Con Methods
-    public void addCon(View view) {
+    public void addCon() {
 
         if (remCount > 0 && conCount < 16) {
             conCount += 1;
@@ -289,7 +344,7 @@ public class CreateFragment extends Fragment  {
 
     }
 
-    public void minusCon(View view) {
+    public void minusCon() {
         if (conCount > 8 && conCount < 16) {
             conCount -= 1;
             updateCon(conCount);
@@ -316,7 +371,7 @@ public class CreateFragment extends Fragment  {
 
 
     //Int Methods
-    public void addInt(View view) {
+    public void addInt() {
 
         if (intCount > 0 && intCount < 16) {
             intCount += 1;
@@ -353,7 +408,7 @@ public class CreateFragment extends Fragment  {
 
     }
 
-    public void minusInt(View view) {
+    public void minusInt() {
         if (intCount != 8 && intCount < 16) {
             intCount = intCount - 1;
             updateInt(intCount);
@@ -381,7 +436,7 @@ public class CreateFragment extends Fragment  {
     }
 
     //Wiz Methods
-    public void addWis(View view) {
+    public void addWis() {
 
         if (wisCount > 0 && wisCount < 16) {
             wisCount = wisCount + 1;
@@ -419,7 +474,7 @@ public class CreateFragment extends Fragment  {
 
     }
 
-    public void minusWis(View view) {
+    public void minusWis() {
         if (wisCount != 8 && wisCount < 16) {
             wisCount -= 1;
             updateWis(wisCount);
@@ -444,7 +499,7 @@ public class CreateFragment extends Fragment  {
     }
 
     //Int Methods
-    public void addCha(View view) {
+    public void addCha() {
 
         if (chaCount > 0 && chaCount < 16) {
             chaCount += 1;
@@ -481,7 +536,7 @@ public class CreateFragment extends Fragment  {
 
     }
 
-    public void minusCha(View view) {
+    public void minusCha() {
         if (chaCount != 8 && chaCount < 16) {
             chaCount -= 1;
             updateCha(chaCount);
