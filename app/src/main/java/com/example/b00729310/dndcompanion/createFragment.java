@@ -1,21 +1,15 @@
 package com.example.b00729310.dndcompanion;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 
 public class createFragment extends Fragment  {
@@ -71,8 +65,6 @@ public class createFragment extends Fragment  {
         adapterClass = ArrayAdapter.createFromResource(getContext(), R.array.characterClasses, android.R.layout.simple_spinner_dropdown_item);
         adapterClass.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerClass.setAdapter(adapterClass);
-
-
     }
 
 

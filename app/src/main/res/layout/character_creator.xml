@@ -1,31 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <Button
-        android:id="@+id/btnStat1Minus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="minusStr"
-        android:text="-"
-        app:layout_constraintBottom_toTopOf="@+id/dexValue"
+        android:columnCount="2"
+        app:layout_constraintEnd_toStartOf="@+id/gridLayout2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pronouns">
+
+        <TextView
+            android:id="@+id/lblStrength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strength" />
+
+        <TextView
+            android:id="@+id/strValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basestat" />
+
+        <Button
+            android:id="@+id/btnStat1Plus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="addStr"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/btnStat1Minus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="minusStr"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/lbldex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dexterity" />
+
+        <TextView
+            android:id="@+id/dexValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basestat" />
+
+        <Button
+            android:id="@+id/dexPlus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="addDex"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/dexMinus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="minusDex"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/lblWisdom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wisdom" />
+
+        <TextView
+            android:id="@+id/wisValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basestat" />
+
+        <Button
+            android:id="@+id/wisPlus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="addWis"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/wisMinus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="minusWis"
+            android:text="-" />
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:columnCount="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnStat1Plus"
-        app:layout_constraintTop_toBottomOf="@+id/pronouns"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gridLayout"
+        app:layout_constraintTop_toTopOf="@+id/gridLayout">
+
+        <TextView
+            android:id="@+id/lblConsituiton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/constitution"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/conValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="minusCon"
+            android:text="TextView"
+            tools:text="@string/basestat" />
+
+        <Button
+            android:id="@+id/conPlus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="addCon"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/conMinus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="44dp"
+            android:layout_height="42dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intelligence"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/intValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basestat" />
+
+        <Button
+            android:id="@+id/intPlus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="addInt"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/intMinus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="minusInt"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/lblCha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:text="@string/charisma" />
+
+        <TextView
+            android:id="@+id/charValue"
+            android:layout_width="12dp"
+            android:layout_height="19dp"
+            android:text="@string/basestat" />
+
+        <Button
+            android:id="@+id/chaPlus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:onClick="addCha"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/chaMinus"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:onClick="minusCha"
+            android:text="-" />
+    </GridLayout>
 
     <TextView
         android:id="@+id/cctitle1"
@@ -121,7 +300,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -129,9 +307,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/unusedPoints"
-        app:layout_constraintTop_toBottomOf="@+id/chaMinus"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/unusedPoints" />
 
     <TextView
         android:id="@+id/textView"
@@ -142,55 +318,10 @@
         android:layout_marginTop="116dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/lblStrength"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cctitle1"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/lblStrength"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/strength"
-        app:layout_constraintBottom_toTopOf="@+id/btnStat1Plus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btnStat1Plus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="168dp"
-        android:onClick="addStr"
-        android:text="+"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/strValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/basestat"
-        app:layout_constraintBottom_toTopOf="@+id/btnStat1Plus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
-        app:layout_constraintStart_toEndOf="@+id/lblStrength" />
+        app:layout_constraintTop_toBottomOf="@+id/cctitle1" />
 
     <TextView
         android:id="@+id/lblRemaining"
@@ -198,13 +329,10 @@
         android:layout_height="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Points Remainig:"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wisMinus"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/unusedPoints"
@@ -212,310 +340,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/pointLeft"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblRemaining"
-        app:layout_constraintTop_toBottomOf="@+id/wisMinus"
-        app:layout_constraintVertical_bias="0.114" />
-
-    <TextView
-        android:id="@+id/lbldex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/dexterity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStat1Plus" />
-
-    <Button
-        android:id="@+id/dexPlus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="+"
-        android:onClick="addDex"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbldex" />
-
-    <Button
-        android:id="@+id/dexMinus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="-"
-        android:onClick="minusDex"
-        app:layout_constraintBottom_toTopOf="@+id/lblConsituiton"
-        app:layout_constraintEnd_toStartOf="@+id/intPlus"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toEndOf="@+id/dexPlus"
-        app:layout_constraintTop_toBottomOf="@+id/lbldex"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/dexValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/basestat"
-        app:layout_constraintStart_toEndOf="@+id/lbldex"
-        app:layout_constraintTop_toBottomOf="@+id/btnStat1Plus" />
-
-    <TextView
-        android:id="@+id/lblConsituiton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/constitution"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/strValue"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
-
-    <Button
-        android:id="@+id/conPlus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="+"
-        android:onClick="addCon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnStat1Minus"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
-
-    <Button
-        android:id="@+id/conMinus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="44dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="160dp"
-        android:text="-"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="261dp" />
-
-    <TextView
-        android:id="@+id/conValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="TextView"
-        android:onClick="minusCon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toEndOf="@+id/lblConsituiton"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerClass"
-        tools:text="@string/basestat" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="224dp"
-        android:text="@string/intelligence"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/dexValue"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/intPlus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="+"
-        android:onClick="addInt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/intMinus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="-"
-        android:onClick="minusInt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toEndOf="@+id/intPlus"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/intValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/basestat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/lblWisdom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/wisdom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dexPlus" />
-
-    <Button
-        android:id="@+id/wisPlus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="8dp"
-        android:text="+"
-        android:onClick="addWis"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblWisdom" />
-
-    <Button
-        android:id="@+id/wisMinus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="-"
-        android:onClick="minusWis"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.011"
-        app:layout_constraintStart_toEndOf="@+id/wisPlus"
-        app:layout_constraintTop_toBottomOf="@+id/dexMinus" />
-
-    <TextView
-        android:id="@+id/wisValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/basestat"
-        app:layout_constraintBottom_toTopOf="@+id/wisPlus"
-        app:layout_constraintStart_toEndOf="@+id/lblWisdom"
-        app:layout_constraintTop_toBottomOf="@+id/dexPlus" />
-
-    <Button
-        android:id="@+id/chaPlus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="+"
-        android:onClick="addCha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/wisMinus"
-        app:layout_constraintTop_toBottomOf="@+id/lblCha"
-        app:layout_constraintVertical_bias="0.069" />
-
-    <Button
-        android:id="@+id/chaMinus"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="-"
-        android:onClick="minusCha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toEndOf="@+id/chaPlus"
-        app:layout_constraintTop_toBottomOf="@+id/lblCha" />
-
-    <TextView
-        android:id="@+id/charValue"
-        android:layout_width="12dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/basestat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toEndOf="@+id/lblCha"
-        app:layout_constraintTop_toBottomOf="@+id/intPlus" />
-
-    <TextView
-        android:id="@+id/lblCha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:layout_marginTop="4dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/wisValue"
-        app:layout_constraintTop_toBottomOf="@+id/intPlus"
-        tools:text="@string/charisma" />
+        app:layout_constraintStart_toEndOf="@+id/lblRemaining" />
 
 </android.support.constraint.ConstraintLayout>

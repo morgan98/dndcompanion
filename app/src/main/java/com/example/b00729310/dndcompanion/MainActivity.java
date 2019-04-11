@@ -17,9 +17,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
-
-
-
     //Var for handling adding or subtracting from character stat
     private int strCount = 8;
     private int dexCount= 8;
@@ -30,10 +27,7 @@ public class MainActivity extends AppCompatActivity
 
     //Var for handling the unused points
     private  int remCount = 27;
-
     int BaseValue = 8;
-
-
 
     @Override
     protected  void onCreate(Bundle savedInstanceState)
