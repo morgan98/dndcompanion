@@ -62,6 +62,7 @@
     <string name="lowestvalue">Your Stat can\'t have a value lower than 8!</string>
     <string name="advice1">It now Costs two Points to upgrade this Stat!</string>
     <string name="save_button">Save</string>
+    <string name="points_remaining_label">Points Remaining:</string>
 
 
 </resources>

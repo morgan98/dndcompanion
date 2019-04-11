@@ -30,6 +30,7 @@
             android:id="@+id/strValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:text="@string/basestat" />
 
         <Button
@@ -58,6 +59,7 @@
             android:id="@+id/dexValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:text="@string/basestat" />
 
         <Button
@@ -86,6 +88,7 @@
             android:id="@+id/wisValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:text="@string/basestat" />
 
         <Button
@@ -128,6 +131,7 @@
             android:id="@+id/conValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:onClick="minusCon"
             android:text="TextView"
             tools:text="@string/basestat" />
@@ -158,6 +162,7 @@
             android:id="@+id/intValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:text="@string/basestat" />
 
         <Button
@@ -185,8 +190,9 @@
 
         <TextView
             android:id="@+id/charValue"
-            android:layout_width="12dp"
-            android:layout_height="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:text="@string/basestat" />
 
         <Button
@@ -225,12 +231,17 @@
         android:id="@+id/characterName"
         android:layout_width="129dp"
         android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/character_name"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="35dp" />
+        app:layout_constraintEnd_toStartOf="@+id/spinnerRace"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cctitle1" />
 
     <EditText
         android:id="@+id/pronouns"
@@ -239,54 +250,44 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="4dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/pronouns"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerClass"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characterName"
-        app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintTop_toBottomOf="@+id/characterName" />
 
     <Spinner
         android:id="@+id/spinnerRace"
         android:layout_width="163dp"
         android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@android:drawable/edit_text"
         android:spinnerMode="dropdown"
         android:text="@string/race"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/characterName"
+        app:layout_constraintTop_toTopOf="@+id/characterName" />
 
     <Spinner
         android:id="@+id/spinnerClass"
         android:layout_width="161dp"
         android:layout_height="39dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@android:drawable/edit_text"
         android:spinnerMode="dropdown"
         android:text="@string/race"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerRace"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pronouns"
+        app:layout_constraintTop_toTopOf="@+id/pronouns" />
 
     <Button
         android:id="@+id/btnSave"
@@ -296,27 +297,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:onClick="onSaveButtonClick"
         android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
         android:text="@string/save_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/unusedPoints" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cctitle1" />
 
     <TextView
         android:id="@+id/lblRemaining"
@@ -325,7 +313,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Points Remainig:"
+        android:text="@string/points_remaining_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -333,11 +321,11 @@
         android:id="@+id/unusedPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/pointLeft"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lblRemaining"
         app:layout_constraintStart_toEndOf="@+id/lblRemaining" />
 
 </android.support.constraint.ConstraintLayout>
